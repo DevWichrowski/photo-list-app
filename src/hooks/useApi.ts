@@ -11,7 +11,7 @@ export interface IPhoto {
 export const useApi = (url: string) => {
     const [data, setData] = useState<IPhoto[]>();
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [error, setError] = useState<unknown>();
+    const [error, setError] = useState<string>();
 
     useEffect(() => {
         const fetchData = async () => {

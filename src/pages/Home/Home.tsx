@@ -21,14 +21,14 @@ const Home = () => {
         setSearchResults(data);
     }, [data])
 
-    const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleSearch = (value: string) => {
         if (!data) {
             return;
         }
 
         setSearchResults(undefined);
 
-        const searchTerm = event.target.value.toLowerCase();
+        const searchTerm = value.toLowerCase();
 
         const filteredResults = data.filter((item: IPhoto) =>
             item.title.toLowerCase().includes(searchTerm)

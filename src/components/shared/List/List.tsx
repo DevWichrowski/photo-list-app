@@ -8,14 +8,14 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 import "./List.scss";
 
-interface IList {
+interface IListProps {
     data: IPhoto[] | undefined;
     limit?: number
     renderItem: (item: { id: number, image: string, title: string }) => any;
     loadingComponent?: ReactNode;
 }
 
-const List = (props: IList) => {
+const List = (props: IListProps) => {
     const {data, limit = 20, loadingComponent = <Skeleton />, renderItem} = props;
 
     const RenderItem = renderItem;

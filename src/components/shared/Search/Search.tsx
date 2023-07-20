@@ -4,7 +4,7 @@ import "./Search.scss";
 
 interface ISearchProps {
     placeholder?: string;
-    onSearch: any;
+    onSearch: (event: string) => unknown
 }
 
 const Search = (props: ISearchProps) => {
@@ -13,15 +13,15 @@ const Search = (props: ISearchProps) => {
     const [search, setSearch] = useState('');
 
     return (
-       <input
-           className="Search"
-           value={search}
-           placeholder={placeholder}
-           onChange={e => {
-               setSearch(e.target.value)
-               onSearch(e);
-           }}
-       />
+        <input
+            className="Search"
+            value={search}
+            placeholder={placeholder}
+            onChange={e => {
+                setSearch(e.target.value)
+                onSearch(e.target.value);
+            }}
+        />
     );
 };
 

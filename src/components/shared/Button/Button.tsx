@@ -1,7 +1,8 @@
 import React from 'react';
 
-import "./Button.scss";
 import {useNavigate} from "react-router-dom";
+
+import "./Button.scss";
 
 interface IButtonProps {
     text?: string;

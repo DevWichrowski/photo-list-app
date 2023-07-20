@@ -13,6 +13,7 @@ interface IImageWithSpinnerProps {
 
 const ImageWithSpinner = (props: IImageWithSpinnerProps) => {
     const {image, title} = props;
+
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -29,7 +30,7 @@ const ImageWithSpinner = (props: IImageWithSpinnerProps) => {
 
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 4000);
+        }, 10000);
 
         imageElement.addEventListener("load", handleImageLoad);
         imageElement.addEventListener("error", handleImageError);
@@ -43,12 +44,13 @@ const ImageWithSpinner = (props: IImageWithSpinnerProps) => {
 
     return (
         <div className="ImageWithSpinner">
-            {isLoading ? <Spinner /> : <img
+            {isLoading ? <Spinner /> : null}
+            <img
                 src={image}
                 alt={title}
                 loading="lazy"
-                style={{display: isLoading ? "none" : "block"}}
-            />}
+                style={{ display: isLoading ? "none" : "block" }}
+            />
         </div>
     );
 };

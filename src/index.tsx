@@ -4,33 +4,14 @@ import "./styles/index.scss";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
-import NotFound from "./pages/NotFound/NotFound";
-import PhotoDetail from "./pages/PhotoDetail/PhotoDetail";
 
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-        errorElement: <NotFound />,
-    },
-    {
-        path: "photos/:id",
-        element: <PhotoDetail />,
-        errorElement: <NotFound />,
-    },
-]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-      <RouterProvider router={router} />
+      <App />
   </React.StrictMode>
 );
 

@@ -1,18 +1,15 @@
 import React, {useEffect, useState} from "react";
 import Spinner from "../Spinner/Spinner";
 
+import "./ImageWithSpinner.scss";
+
 interface IImageWithSpinnerProps {
+    className?: string;
     image: string;
     title: string;
 }
-
-interface IImageWithSpinnerProps {
-    image: string;
-    title: string;
-}
-
 const ImageWithSpinner = (props: IImageWithSpinnerProps) => {
-    const {image, title} = props;
+    const {image, title, className = ''} = props;
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -37,9 +34,10 @@ const ImageWithSpinner = (props: IImageWithSpinnerProps) => {
     }, [image]);
 
     return (
-        <div className="ImageWithSpinner">
+        <div className={`ImageWithSpinner ${className}`}>
             {isLoading ? <Spinner /> : null}
             <img
+                className="ImageWithSpinner__image"
                 src={image}
                 alt={title}
                 loading="lazy"

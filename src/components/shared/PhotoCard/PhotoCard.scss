@@ -6,6 +6,7 @@
   padding: 1rem;
   border-radius: 0.5rem;
   transition: 0.3s all ease-in-out;
+  text-decoration: none;
 
   &:hover {
     @include box-shadow();
@@ -14,6 +15,7 @@
 
   &__title {
     margin-top: 0.5rem;
+    color: black;
   }
 
   &__image {

@@ -1,6 +1,12 @@
 .ImageWithSpinner {
-  &__container {
-    height: 150px;
-    width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  &__image {
+    height: 100%;
+    width: 100%;
   }
 }

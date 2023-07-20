@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {useApi} from "./hooks/useApi";
+import {IPhoto, useApi} from "./hooks/useApi";
 import List from "./components/shared/List/List";
 import Skeleton from "react-loading-skeleton";
 import PhotoCard from "./components/shared/PhotoCard/PhotoCard";
 import Search from "./components/shared/Search/Search";
 
 import {debounce} from "./utils/funcs";
+
 import './App.scss';
 
 const App = () => {
@@ -30,7 +31,7 @@ const App = () => {
 
         const searchTerm = event.target.value.toLowerCase();
 
-        const filteredResults = data.filter((item) =>
+        const filteredResults = data.filter((item: IPhoto) =>
             item.title.toLowerCase().includes(searchTerm)
         );
 
@@ -45,7 +46,7 @@ const App = () => {
             <div className="App__list-wrapper">
                 <List
                     data={searchResults}
-                    renderItem={(item) => <PhotoCard image={item.image} title={item.title} />}
+                    renderItem={(item) => <PhotoCard id={item.id} image={item.image} title={item.title} />}
                     loadingComponent={<Skeleton width={335} height={225} />}
                 />
             </div>

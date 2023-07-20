@@ -2,26 +2,30 @@ import React from 'react';
 
 import ImageWithSpinner from "../ImageWithSpinner/ImageWithSpinner";
 
-import "./PhotoCard.scss";
 import {truncateText} from "../../../utils/funcs";
+import {Link} from "react-router-dom";
+
+import "./PhotoCard.scss";
+
 
 interface IPhotoCardProps {
+    id: number;
     image: string;
     title: string;
 }
 
 const PhotoCard = (props: IPhotoCardProps) => {
-    const { image, title } = props;
+    const {id, image, title} = props;
 
     return (
-        <div className="PhotoCard">
+        <Link className="PhotoCard" to={`/photos/${id}`}>
             <div className="PhotoCard__image">
                 <ImageWithSpinner image={image} title={title} />
             </div>
             <div className="PhotoCard__title">
                 {truncateText(title, 35)}
             </div>
-        </div>
+        </Link>
     );
 };
 

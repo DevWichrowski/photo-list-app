@@ -9,7 +9,7 @@ export interface IPhoto {
 }
 
 export const useApi = (url: string) => {
-    const [data, setData] = useState<IPhoto[]>();
+    const [data, setData] = useState<any>();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string>();
 

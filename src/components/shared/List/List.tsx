@@ -3,6 +3,7 @@ import {IPhoto} from "../../../hooks/useApi";
 
 import {makeArray} from "../../../utils/funcs";
 import Skeleton from "react-loading-skeleton";
+
 import 'react-loading-skeleton/dist/skeleton.css'
 
 import "./List.scss";
@@ -10,7 +11,7 @@ import "./List.scss";
 interface IList {
     data: IPhoto[] | undefined;
     limit?: number
-    renderItem: (item: { image: string, title: string }) => any;
+    renderItem: (item: { id: number, image: string, title: string }) => any;
     loadingComponent?: ReactNode;
 }
 
@@ -33,6 +34,7 @@ const List = (props: IList) => {
 
             {data?.map((item: IPhoto) => (
                     <RenderItem
+                        id={item.id}
                         key={item.id}
                         image={item.thumbnailUrl}
                         title={item.title}

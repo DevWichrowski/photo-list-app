@@ -1,26 +1,34 @@
-import React from 'react';
+import React, {Fragment, ReactNode} from 'react';
 import {IPhoto} from "../../../hooks/useApi";
 
-import "./List.scss";
-import PhotoCard from "../PhotoCard/PhotoCard";
 import {makeArray} from "../../../utils/funcs";
+import Skeleton from "react-loading-skeleton";
+import 'react-loading-skeleton/dist/skeleton.css'
+
+import "./List.scss";
 
 interface IList {
     data: IPhoto[] | undefined;
-    loadingItemsCount?: number
+    limit?: number
+    renderItem: (item: {image: string, title: string}) => any;
+    loadingComponent?: ReactNode;
 }
 
 const List = (props: IList) => {
-    const {data, loadingItemsCount = 10} = props;
+    const {data, limit = 20, loadingComponent = <Skeleton />, renderItem} = props;
+
+    const RenderItem = renderItem;
 
     return (
         <div className="List">
-            {!data && makeArray(loadingItemsCount).map((item: number) => (
-                <h1>Loading</h1>
+            {!data && makeArray(limit).map((item: number) => (
+                <Fragment key={item}>
+                    {loadingComponent}
+                </Fragment>
             ))}
 
             {data?.map((item: IPhoto) => (
-                    <PhotoCard
+                    <RenderItem
                         key={item.id}
                         image={item.thumbnailUrl}
                         title={item.title}

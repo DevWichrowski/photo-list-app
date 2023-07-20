@@ -2,7 +2,7 @@
 
 .PhotoCard {
   width: 300px;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.18);
   padding: 1rem;
   border-radius: 0.5rem;
   transition: 0.3s all ease-in-out;
@@ -10,5 +10,14 @@
   &:hover {
     @include box-shadow();
     cursor: pointer;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 150px;
+    width: 150px;
   }
 }

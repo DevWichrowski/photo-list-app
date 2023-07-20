@@ -1,6 +1,7 @@
 import React from 'react';
 
 import "./PhotoCard.scss";
+import ImageWithSpinner from "../ImageWithSpinner/ImageWithSpinner";
 
 interface IPhotoCardProps {
     image: string;
@@ -13,7 +14,7 @@ const PhotoCard = (props: IPhotoCardProps) => {
     return (
         <div className="PhotoCard">
             <div className="PhotoCard__image">
-                <img src={image} alt={title} loading="lazy"/>
+                <ImageWithSpinner image={image} title={title} />
             </div>
             <div className="PhotoCard__title">
                 {title}

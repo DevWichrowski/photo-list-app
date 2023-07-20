@@ -1,17 +1,23 @@
 @import "./../../styles/mixins.scss";
+@import "./../../styles/variables.scss";
 
 .PhotoDetail {
-  margin: 4rem;
+  padding: 4rem;
 
   @include mobile-media-query {
-    margin: 0.5rem;
-  };
+    padding: 0.5rem;
+  }
+
+  &__btn-container {
+    @include flex-center();
+
+    padding: 2rem 0;
+  }
 
   &__container {
-    display: flex;
+    @include flex-center();
+
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   &__image {
@@ -21,36 +27,36 @@
   }
 
   &__details {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center();
 
     table {
       border-collapse: collapse;
       border: 1px solid #ddd;
       margin-bottom: 20px;
       padding: 0;
-      width: 100%;
+      width: 75%;
       table-layout: fixed;
 
       th,
       td {
         padding: 10px;
         text-align: left;
-        border: 1px solid #ddd;
+        border: 1px solid $primary-dark;
         word-break: break-all;
       }
 
       th {
-        background-color: #f2f2f2;
+        background-color: $primary-dark;
+        border: 1px solid $secondary;
       }
 
       tr:nth-child(even) {
-        background-color: #f2f2f2;
+        background-color: $primary-dark;
       }
 
       tr:hover {
-        background-color: #e6e6e6;
+        background-color: $orange;
+        transition: 0.3s all ease-in-out;
       }
     }
 
@@ -58,6 +64,7 @@
       padding: 2rem 0;
       max-width: 100%;
       overflow-y: auto;
-    };
+    }
+  ;
   }
 }

@@ -9,14 +9,6 @@ const PhotoDetailsLoader = () => {
             <div className="PhotoDetailsLoader__image">
                 <Skeleton height="300px"/>
             </div>
-
-            <div className="PhotoDetailsLoader__desc">
-                <Skeleton height="40px"/>
-            </div>
-
-            <div>
-                <Skeleton height="255px"/>
-            </div>
         </div>
     );
 };

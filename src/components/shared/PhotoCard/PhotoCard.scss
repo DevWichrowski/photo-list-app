@@ -1,27 +1,29 @@
 @import "./../../../styles/mixins.scss";
+@import "./../../../styles/variables.scss";
 
 .PhotoCard {
   width: 300px;
-  border: 1px solid rgba(0, 0, 0, 0.18);
+  border: 1px solid $secondary;
   padding: 1rem;
   border-radius: 0.5rem;
   transition: 0.3s all ease-in-out;
   text-decoration: none;
+  background-color: $primary-dark;
 
   &:hover {
     @include box-shadow();
+    border: 1px solid $orange;
     cursor: pointer;
   }
 
   &__title {
     margin-top: 0.5rem;
-    color: black;
+    color: $text-color;
   }
 
   &__image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center();
+
     margin: 0 auto;
     height: 150px;
     width: 150px;

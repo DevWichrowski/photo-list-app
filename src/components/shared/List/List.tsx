@@ -21,7 +21,7 @@ const List = (props: IList) => {
     const RenderItem = renderItem;
 
     if (data?.length === 0) {
-        return <div>No results</div>
+        return <h2>No results</h2>
     }
 
     return (

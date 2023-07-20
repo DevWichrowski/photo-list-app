@@ -1,7 +1,9 @@
 import React from 'react';
 
-import "./PhotoCard.scss";
 import ImageWithSpinner from "../ImageWithSpinner/ImageWithSpinner";
+
+import "./PhotoCard.scss";
+import {truncateText} from "../../../utils/funcs";
 
 interface IPhotoCardProps {
     image: string;
@@ -17,7 +19,7 @@ const PhotoCard = (props: IPhotoCardProps) => {
                 <ImageWithSpinner image={image} title={title} />
             </div>
             <div className="PhotoCard__title">
-                {title}
+                {truncateText(title, 35)}
             </div>
         </div>
     );

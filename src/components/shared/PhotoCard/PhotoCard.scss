@@ -12,6 +12,10 @@
     cursor: pointer;
   }
 
+  &__title {
+    margin-top: 0.5rem;
+  }
+
   &__image {
     display: flex;
     align-items: center;

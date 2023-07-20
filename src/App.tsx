@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import {IPhoto, useApi} from "./hooks/useApi";
 import List from "./components/shared/List/List";
 import Skeleton from "react-loading-skeleton";
@@ -22,7 +22,7 @@ const App = () => {
         setSearchResults(data);
     }, [data])
 
-    const handleSearch = (event: any) => {
+    const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
         if (!data) {
             return;
         }

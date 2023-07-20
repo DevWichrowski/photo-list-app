@@ -14,7 +14,7 @@ export const truncateText = (text: string, maxLength: number, showEllipsis = tru
 export const debounce = (func: Function, delay: number) => {
     let timeoutId: ReturnType<typeof setTimeout>;
 
-    return (...args: any[]) => {
+    return (...args: string[]) => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
             func(...args);

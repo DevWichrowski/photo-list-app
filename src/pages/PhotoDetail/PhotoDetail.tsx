@@ -6,6 +6,7 @@ import ImageWithSpinner from "../../components/shared/ImageWithSpinner/ImageWith
 import {useParams} from "react-router-dom";
 
 import "./PhotoDetail.scss";
+import PhotoDetailsLoader from "../PhotoDetailsLoader/PhotoDetailsLoader";
 
 const PhotoDetail = () => {
     const {id} = useParams();
@@ -13,7 +14,7 @@ const PhotoDetail = () => {
     const {data} = useApi(`https://jsonplaceholder.typicode.com/photos/${id}`);
 
     if(!data) {
-        return <div>Loading...</div>
+        return <PhotoDetailsLoader />
     }
 
     return (

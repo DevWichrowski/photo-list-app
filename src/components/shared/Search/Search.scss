@@ -1,11 +1,21 @@
 @import "../../../styles/mixins";
+@import "../../../styles/variables";
 
 .Search {
-  width: 350px;
-  height: 30px;
-  border: 1px solid black;
+  width: 500px;
+  height: 50px;
   border-radius: 1rem;
   padding: 0 1.25rem;
+  background-color: $primary-dark;
+  border: 1px solid $secondary;
+  outline: none;
+  transition: 0.3s all ease-in-out;
+  color: $text-color;
+
+  &:focus {
+    @include box-shadow();
+    border: 1px solid $orange;
+  }
 
   @include mobile-media-query {
     width: 100%;

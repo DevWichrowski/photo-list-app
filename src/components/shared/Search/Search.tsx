@@ -8,7 +8,7 @@ interface ISearchProps {
 }
 
 const Search = (props: ISearchProps) => {
-    const {placeholder = "Search for photos...", onSearch} = props;
+    const {placeholder = "Search photos by title...", onSearch} = props;
 
     const [search, setSearch] = useState('');
 

@@ -1,5 +1,11 @@
+@import "./../../styles/mixins.scss";
+
 .PhotoDetail {
   margin: 4rem;
+
+  @include mobile-media-query {
+    margin: 0.5rem;
+  };
 
   &__container {
     display: flex;
@@ -23,12 +29,16 @@
       border-collapse: collapse;
       border: 1px solid #ddd;
       margin-bottom: 20px;
+      padding: 0;
+      width: 100%;
+      table-layout: fixed;
 
       th,
       td {
         padding: 10px;
         text-align: left;
         border: 1px solid #ddd;
+        word-break: break-all;
       }
 
       th {
@@ -43,5 +53,11 @@
         background-color: #e6e6e6;
       }
     }
+
+    @include mobile-media-query {
+      padding: 2rem 0;
+      max-width: 100%;
+      overflow-y: auto;
+    };
   }
 }

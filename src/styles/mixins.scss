@@ -3,3 +3,9 @@
   -moz-box-shadow: $shadow;
   box-shadow: $shadow;
 }
+
+@mixin mobile-media-query {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

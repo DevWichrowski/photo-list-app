@@ -5,8 +5,9 @@ import {useApi} from "../../hooks/useApi";
 import ImageWithSpinner from "../../components/shared/ImageWithSpinner/ImageWithSpinner";
 import {useParams} from "react-router-dom";
 
-import "./PhotoDetail.scss";
 import PhotoDetailsLoader from "../PhotoDetailsLoader/PhotoDetailsLoader";
+
+import "./PhotoDetail.scss";
 
 const PhotoDetail = () => {
     const {id} = useParams();

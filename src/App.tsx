@@ -47,7 +47,7 @@ const App = () => {
                 <List
                     data={searchResults}
                     renderItem={(item) => <PhotoCard id={item.id} image={item.image} title={item.title} />}
-                    loadingComponent={<Skeleton width={335} height={225} />}
+                    loadingComponent={<Skeleton width={300} height={225} />}
                 />
             </div>
         </div>

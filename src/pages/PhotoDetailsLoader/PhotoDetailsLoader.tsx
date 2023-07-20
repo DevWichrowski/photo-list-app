@@ -6,11 +6,11 @@ import "./PhotoDetailsLoader.scss";
 const PhotoDetailsLoader = () => {
     return (
         <div className="PhotoDetailsLoader">
-            <div className="PhoneDetailsLoader__image">
+            <div className="PhotoDetailsLoader__image">
                 <Skeleton height="300px"/>
             </div>
 
-            <div className="PhoneDetailsLoader__desc">
+            <div className="PhotoDetailsLoader__desc">
                 <Skeleton height="40px"/>
             </div>
 

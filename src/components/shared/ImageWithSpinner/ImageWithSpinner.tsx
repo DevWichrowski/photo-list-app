@@ -24,21 +24,15 @@ const ImageWithSpinner = (props: IImageWithSpinnerProps) => {
             setIsLoading(false);
         };
 
-        const handleImageError = () => {
-            setIsLoading(false);
-        };
-
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 10000);
+        }, 2000);
 
         imageElement.addEventListener("load", handleImageLoad);
-        imageElement.addEventListener("error", handleImageError);
 
         return () => {
             clearTimeout(timer);
             imageElement.removeEventListener("load", handleImageLoad);
-            imageElement.removeEventListener("error", handleImageError);
         };
     }, [image]);
 

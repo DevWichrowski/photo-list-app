@@ -1,22 +1,50 @@
-import React from 'react';
-import './App.scss';
+import React, {useEffect, useState} from 'react';
 import {useApi} from "./hooks/useApi";
 import List from "./components/shared/List/List";
 import Skeleton from "react-loading-skeleton";
 import PhotoCard from "./components/shared/PhotoCard/PhotoCard";
+import Search from "./components/shared/Search/Search";
+
+import {debounce} from "./utils/funcs";
+import './App.scss';
 
 const App = () => {
-    const {data, error} = useApi('https://jsonplaceholder.typicode.com/albums/1/photos?limit=10');
+    const {data} = useApi('https://jsonplaceholder.typicode.com/albums/1/photos?limit=10');
 
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
+    const [searchResults, setSearchResults] = useState(data);
+
+    useEffect(() => {
+        if (!data) {
+            return
+        }
+
+        setSearchResults(data);
+    }, [data])
+
+    const handleSearch = (event: any) => {
+        if (!data) {
+            return;
+        }
+
+        setSearchResults(undefined);
+
+        const searchTerm = event.target.value.toLowerCase();
+
+        const filteredResults = data.filter((item) =>
+            item.title.toLowerCase().includes(searchTerm)
+        );
+
+        setSearchResults(filteredResults);
+    };
+
+    const debouncedHandleSearch = debounce(handleSearch, 1000);
 
     return (
         <div className="App">
+            <Search onSearch={debouncedHandleSearch}/>
             <div className="App__list-wrapper">
                 <List
-                    data={data}
+                    data={searchResults}
                     renderItem={(item) => <PhotoCard image={item.image} title={item.title} />}
                     loadingComponent={<Skeleton width={335} height={225} />}
                 />

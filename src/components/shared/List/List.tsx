@@ -10,7 +10,7 @@ import "./List.scss";
 interface IList {
     data: IPhoto[] | undefined;
     limit?: number
-    renderItem: (item: {image: string, title: string}) => any;
+    renderItem: (item: { image: string, title: string }) => any;
     loadingComponent?: ReactNode;
 }
 
@@ -18,6 +18,10 @@ const List = (props: IList) => {
     const {data, limit = 20, loadingComponent = <Skeleton />, renderItem} = props;
 
     const RenderItem = renderItem;
+
+    if (data?.length === 0) {
+        return <div>No results</div>
+    }
 
     return (
         <div className="List">

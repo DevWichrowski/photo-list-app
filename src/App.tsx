@@ -9,7 +9,7 @@ import {debounce} from "./utils/funcs";
 import './App.scss';
 
 const App = () => {
-    const {data} = useApi('https://jsonplaceholder.typicode.com/albums/1/photos?limit=10');
+    const {data} = useApi('https://jsonplaceholder.typicode.com/albums/1/photos');
 
     const [searchResults, setSearchResults] = useState(data);
 

@@ -14,12 +14,13 @@ const App = () => {
 
     return (
         <div className="App">
-            App start
-            <List
-                data={data}
-                renderItem={(item) => <PhotoCard image={item.image} title={item.title} />}
-                loadingComponent={<Skeleton width={300} height={225} />}
-            />
+            <div className="App__list-wrapper">
+                <List
+                    data={data}
+                    renderItem={(item) => <PhotoCard image={item.image} title={item.title} />}
+                    loadingComponent={<Skeleton width={335} height={225} />}
+                />
+            </div>
         </div>
     );
 }

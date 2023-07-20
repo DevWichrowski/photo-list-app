@@ -29,7 +29,7 @@ const ImageWithSpinner = (props: IImageWithSpinnerProps) => {
 
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 3000);
+        }, 4000);
 
         imageElement.addEventListener("load", handleImageLoad);
         imageElement.addEventListener("error", handleImageError);

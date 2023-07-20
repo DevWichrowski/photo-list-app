@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {IPhoto, useApi} from "../../hooks/useApi";
 import {debounce} from "../../utils/funcs";
 import Search from "../../components/shared/Search/Search";

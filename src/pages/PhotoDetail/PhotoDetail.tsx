@@ -1,13 +1,12 @@
 import React from 'react';
 
 import {useApi} from "../../hooks/useApi";
-
-import ImageWithSpinner from "../../components/shared/ImageWithSpinner/ImageWithSpinner";
 import {useParams} from "react-router-dom";
 
+import ImageWithSpinner from "../../components/shared/ImageWithSpinner/ImageWithSpinner";
 import PhotoDetailsLoader from "../PhotoDetailsLoader/PhotoDetailsLoader";
-
 import Button from "../../components/shared/Button/Button";
+
 import "./PhotoDetail.scss";
 
 const PhotoDetail = () => {
